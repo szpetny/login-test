@@ -20,7 +20,8 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/.htaccess"
             ],
             "styles": [
               "src/styles.css"
@@ -28,6 +29,23 @@
             "scripts": []
           },
           "configurations": {
+            "authapi": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.authapi.ts"
+                }
+              ]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -53,6 +71,9 @@
             "browserTarget": "login-test:build"
           },
           "configurations": {
+            "authapi": {
+              "browserTarget": "login-test:build:authapi"
+            },
             "production": {
               "browserTarget": "login-test:build:production"
             }

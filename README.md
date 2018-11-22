@@ -25,3 +25,15 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Run on localhost SETUP
+
+1. In file: C:\Windows\System32\drivers\etc\host: add entry:        127.0.0.1                              aspint
+
+2. run with 'npm start' (uses proxy file)
+
+3. go to http://aspint:4200
+
+## Run on apache SETUP
+
+1. build the app with: ng run login-test:build:authapi --base-href=/login-test/
